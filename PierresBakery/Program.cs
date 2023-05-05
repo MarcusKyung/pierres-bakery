@@ -75,8 +75,23 @@ namespace PierresBakery
       int result1 = breadOrder.CalculateBreadTotalPrice();
       int result2 = pastryOrder.CalculatePastryTotalPrice();
       Console.WriteLine("-----------------------------------------");
-      Console.WriteLine("Your total order cost is: " + "$" + (result1 + result2) + ".");
-      Console.WriteLine("Thanks for your order!");
+      if ($"{breadOrder.Loaves}" == "1" && $"{pastryOrder.Pastries}" == "1")
+      {
+        Console.WriteLine($"Your total cost for {breadOrder.Loaves} loaf of bread and {pastryOrder.Pastries} pastry is " + "$" + (result1 + result2) + ".");
+      }
+      else if ($"{breadOrder.Loaves}" != "1" && $"{pastryOrder.Pastries}" == "1")
+      {
+        Console.WriteLine($"Your total cost for {breadOrder.Loaves} loaves of bread and {pastryOrder.Pastries} pastry is " + "$" + (result1 + result2) + ".");
+      }
+      else if ($"{breadOrder.Loaves}" == "1" && $"{pastryOrder.Pastries}" != "1")
+      {
+        Console.WriteLine($"Your total cost for {breadOrder.Loaves} loaf of bread and {pastryOrder.Pastries} pastries is " + "$" + (result1 + result2) + ".");
+      } 
+      else
+      {
+        Console.WriteLine($"Your total cost for {breadOrder.Loaves} loaves of bread and {pastryOrder.Pastries} pastries is " + "$" + (result1 + result2) + ".");
+      }
+      Console.WriteLine("Thanks for your order!"); 
       Console.WriteLine("-----------------------------------------");
     }
   }
