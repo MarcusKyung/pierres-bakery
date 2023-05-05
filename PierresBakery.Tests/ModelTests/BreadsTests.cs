@@ -42,11 +42,11 @@ namespace PierresBakery.Tests
     public void CalculateBreadTotalPrice_FindsPriceOfBreadOrder_Int()
     {
     //Arrange
-    Bread newBread = new Bread(5);
+    Bread newBread = new Bread(100);
     //Act
     int price = newBread.CalculateBreadTotalPrice();
     //Assert
-    Assert.AreEqual(20, price);
+    Assert.AreEqual(335, price);
     }
   }
 }

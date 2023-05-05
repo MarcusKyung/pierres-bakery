@@ -7,5 +7,11 @@ namespace PierresBakery.Models
     {
       Loafs = quantity;
     }
+
+    public int CalculateBreadTotalPrice()
+    {
+    int price = ((Loafs-(Loafs%3))/3)*10+(Loafs%3)*5;
+    return price;
+    }
   }
 }
