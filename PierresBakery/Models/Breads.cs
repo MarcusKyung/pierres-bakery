@@ -2,15 +2,15 @@ namespace PierresBakery.Models
 {
   public class Bread
   {
-    public int Loafs { get; set; }
+    public int Loaves { get; set; }
     public Bread(int quantity)
     {
-      Loafs = quantity;
+      Loaves = quantity;
     }
 
     public int CalculateBreadTotalPrice()
     {
-    int price = ((Loafs-(Loafs%3))/3)*10+(Loafs%3)*5;
+    int price = ((Loaves-(Loaves%3))/3)*10+(Loaves%3)*5;
     return price;
     }
   }
