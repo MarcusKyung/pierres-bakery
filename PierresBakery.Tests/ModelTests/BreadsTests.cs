@@ -25,5 +25,17 @@ namespace PierresBakery.Tests
       //Assert
       Assert.AreEqual(quantity, result);
     }
+
+    [TestMethod]
+    public void SetBreadOrder_SetsValueOfBreadOrder_Void()
+    {
+      //Arrange
+      Bread newBread = new Bread(3);
+      int newQuantity = 20;
+      //Act
+      newBread.Loafs = newQuantity;
+      //Assert
+      Assert.AreEqual(newQuantity, newBread.Loafs);
+    }
   }
 }
