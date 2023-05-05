@@ -9,6 +9,7 @@ namespace PierresBakery
     {
       Console.WriteLine("*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
       Console.WriteLine("Welcome to the Pierres Bakery!");
+      Console.WriteLine("We sell bread and pastries");
       Console.WriteLine("A single loaf of bread costs $5, and every third loaf is free.");
       Console.WriteLine("How many loaves of bread would you like to buy?");
       string breadOrderString = Console.ReadLine();  
@@ -25,8 +26,7 @@ namespace PierresBakery
     static void ConfirmOrEditOrder(Bread breadOrder, Pastry pastryOrder)
     {
       Console.WriteLine("Please confirm that your order:");
-      Console.WriteLine($"{breadOrder.Loaves}");
-      Console.WriteLine($"{pastryOrder.Pastries}");
+      Console.WriteLine($"You want {breadOrder.Loaves} loaves of bread and {pastryOrder.Pastries} pasteries?");
       Console.WriteLine("Is that correct? Enter 'yes' to proceed, or 'no' to reorder");
       string userInput = Console.ReadLine();  
       if (userInput == "yes")
@@ -53,7 +53,7 @@ namespace PierresBakery
       int result1 = breadOrder.CalculateBreadTotalPrice();
       int result2 = pastryOrder.CalculatePastryTotalPrice();
       Console.WriteLine("-----------------------------------------");
-      Console.WriteLine("Your result is: " + "$" + (result1 + result2) + ".");
+      Console.WriteLine("Your total cost is: " + "$" + (result1 + result2) + ".");
       Console.WriteLine("-----------------------------------------");
     }
   }
