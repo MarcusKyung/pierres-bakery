@@ -11,19 +11,25 @@ namespace PierresBakery
       Console.WriteLine("Welcome to the Pierres Bakery!");
       Console.WriteLine("*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
       Console.WriteLine("Prices:");
-      Console.WriteLine("Bread --- €5/loaf");
-      Console.WriteLine("Pasteries --- €2/pastry");
-      Console.WriteLine("A single loaf of bread costs €5, and every third loaf is free.");
+      Console.WriteLine("Bread --- $5/loaf --- A single loaf of bread costs $5, and every third loaf is free.");
+      Console.WriteLine("Pasteries --- $2/pastry --- A single pastry costs $2, and every fourth pastry is free.");
       Console.WriteLine("How many loaves of bread would you like to buy?");
       string breadOrderString = Console.ReadLine();  
-      Console.WriteLine("A single pastry costs €2, and every fourth pastry is free.");
       Console.WriteLine("How many pastries would you like to buy?");
       string pastryOrderString = Console.ReadLine();
-      int breadOrderInt = int.Parse(breadOrderString);
-      int pastryOrderInt = int.Parse(pastryOrderString);
-      Bread breadOrder = new Bread(breadOrderInt);
-      Pastry pastryOrder = new Pastry(pastryOrderInt);
-      ConfirmOrEditOrder(breadOrder, pastryOrder);
+      try
+      {
+        int breadOrderInt = int.Parse(breadOrderString);
+        int pastryOrderInt = int.Parse(pastryOrderString);
+        Bread breadOrder = new Bread(breadOrderInt);
+        Pastry pastryOrder = new Pastry(pastryOrderInt);
+        ConfirmOrEditOrder(breadOrder, pastryOrder);
+      }
+      catch (Exception)
+      {
+        Console.WriteLine("That wasn't a number! Please try again.");
+        Main();
+      }
     }
 
     static void ConfirmOrEditOrder(Bread breadOrder, Pastry pastryOrder)
@@ -69,7 +75,7 @@ namespace PierresBakery
       int result1 = breadOrder.CalculateBreadTotalPrice();
       int result2 = pastryOrder.CalculatePastryTotalPrice();
       Console.WriteLine("-----------------------------------------");
-      Console.WriteLine("Your total order cost is: " + "€" + (result1 + result2) + ".");
+      Console.WriteLine("Your total order cost is: " + "$" + (result1 + result2) + ".");
       Console.WriteLine("Thanks for your order!");
       Console.WriteLine("-----------------------------------------");
     }
