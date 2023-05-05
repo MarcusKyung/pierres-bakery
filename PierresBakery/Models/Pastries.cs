@@ -7,5 +7,11 @@ namespace PierresBakery.Models
     {
       Pastries = count;
     }
+
+    public int CalculatePastryTotalPrice()
+    {
+    int pastryOrderPrice = ((Pastries-(Pastries%4))/4)*6+(Pastries%4)*2;
+    return pastryOrderPrice;
+    }
   }
 }
