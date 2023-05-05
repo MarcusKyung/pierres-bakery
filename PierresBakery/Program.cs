@@ -53,7 +53,7 @@ namespace PierresBakery
       } 
       Console.WriteLine("Is that correct? Enter 'yes' to proceed, or 'no' to reorder");
       string userInput = Console.ReadLine();  
-      if (userInput == "yes")
+      if (userInput == "yes" || userInput == "YES" || userInput == "Yes")
       {
         CalculateTotalPrice(breadOrder, pastryOrder);
       }
