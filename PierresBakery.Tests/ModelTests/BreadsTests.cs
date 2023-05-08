@@ -21,7 +21,7 @@ namespace PierresBakery.Tests
       int quantity = 3;
       Bread newBread = new Bread(quantity);
       //Act
-      int result = newBread.Loafs;
+      int result = newBread.Loaves;
       //Assert
       Assert.AreEqual(quantity, result);
     }
@@ -33,9 +33,9 @@ namespace PierresBakery.Tests
       Bread newBread = new Bread(3);
       int newQuantity = 20;
       //Act
-      newBread.Loafs = newQuantity;
+      newBread.Loaves = newQuantity;
       //Assert
-      Assert.AreEqual(newQuantity, newBread.Loafs);
+      Assert.AreEqual(newQuantity, newBread.Loaves);
     }
 
     [TestMethod]
